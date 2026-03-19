@@ -1,59 +1,175 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Embedded C Course</title>
+  <title>Embedded C Course</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #0a3d62;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0a3d62;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    button {
+      background: #38ada9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #1e8449;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Embedded C Course</h1>
-<p>Welcome to Embedded C learning</p>
+<header>
+  <h1>🚀 Embedded C Course</h1>
+</header>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Embedded C Course</title>
-<style>
-body { font-family: Arial; padding: 20px; }
-h1 { color: #0a3d62; }
-</style>
-</head>
+<div class="container">
 
-<body>
+  <!-- INTRO -->
+  <div class="box">
+    <h2>📘 What is Embedded C?</h2>
+    <p>
+      Embedded C is a programming language used to develop software for embedded systems like microcontrollers.
+    </p>
 
-<h1>Embedded C Course</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Microcontroller.jpg">
+  </div>
 
-<h2>📌 Introduction</h2>
-    <h2>📌 Introduction</h2>
-<p>Embedded C is used...</p>
+  <!-- COMPONENTS -->
+  <div class="box">
+    <h2>🔧 Components Used</h2>
+    <ul>
+      <li>Microcontroller (8051 / Arduino)</li>
+      <li>LED</li>
+      <li>Resistor</li>
+      <li>Push Button</li>
+      <li>Power Supply</li>
+    </ul>
 
-<!-- 👇 IKKADE image add cheyyandi -->
-<h2>📌 Microcontroller Diagram</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Arduino_Uno_-_R3.jpg/640px-Arduino_Uno_-_R3.jpg" width="300">
-<h2>📌 Next Topic</h2>
-<p>Embedded C is used to program microcontrollers like Arduino, PIC, ARM.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Arduino_Uno_-_R3.jpg">
+  </div>
 
-<h2>📌 Basic Structure</h2>
+  <!-- BASIC CODE -->
+  <div class="box">
+    <h2>💻 Basic Embedded C Code</h2>
+
 <pre>
-#include<stdio.h>
+#include &lt;stdio.h&gt;
 
 int main() {
-    printf("Hello Embedded");
+    printf("Hello Embedded C");
     return 0;
 }
 </pre>
 
-<h2>📌 Applications</h2>
-<ul>
-<li>Washing Machines</li>
-<li>Traffic Lights</li>
-<li>IoT Devices</li>
-</ul>
+  </div>
 
-<h2>📌 Summary</h2>
-<p>Embedded C is essential for embedded systems development.</p>
+  <!-- GPIO -->
+  <div class="box">
+    <h2>⚡ LED Blinking Code</h2>
 
-</body>
-</html>
+<pre>
+#include &lt;reg51.h&gt;
+
+void delay() {
+  int i,j;
+  for(i=0;i<100;i++)
+    for(j=0;j<1000;j++);
+}
+
+void main() {
+  while(1) {
+    P1 = 0xFF;
+    delay();
+    P1 = 0x00;
+    delay();
+  }
+}
+</pre>
+
+  </div>
+
+  <!-- PROJECT -->
+  <div class="box">
+    <h2>🚀 Mini Project: LED Blinking</h2>
+
+    <p>
+      Connect LED to microcontroller pin and write code to blink LED continuously.
+    </p>
+
+    <ul>
+      <li>Step 1: Connect LED + resistor</li>
+      <li>Step 2: Write code</li>
+      <li>Step 3: Upload to microcontroller</li>
+    </ul>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LED_circuit.png">
+  </div>
+
+  <!-- QUIZ -->
+  <div class="box">
+    <h2>❓ Quick Quiz</h2>
+
+    <p>1. What is Embedded C?</p>
+    <p>2. What is GPIO?</p>
+    <p>3. Which component is used for blinking?</p>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="box" style="text-align:center;">
+    <a href="index.html">
+      <button>⬅ Back to Courses</button>
+    </a>
+  </div>
+
+</div>
 
 </body>
 </html>
