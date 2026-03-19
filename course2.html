@@ -1,23 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Arduino Course</title>
+<title>Arduino Basics</title>
+
 <style>
-body { font-family: Arial; padding: 20px; background: #f4f4f4; }
-h1 { color: #0a3d62; }
-.box { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; }
+body {
+  font-family: Arial;
+  padding:20px;
+  background:#f4f4f4;
+}
+
+.box {
+  background:white;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  box-shadow:0px 0px 10px gray;
+}
+
+pre {
+  background:#222;
+  color:#0f0;
+  padding:10px;
+  border-radius:5px;
+}
 </style>
+
 </head>
 
 <body>
 
-<h1>COURSE 2 WORKING 🔥</h1>
+<h1>🔌 Arduino Basics</h1>
 
-<h2>Arduino Basics</h2>
-
+<!-- INTRO -->
 <div class="box">
-<h3>What is Arduino?</h3>
+<h2>📌 What is Arduino?</h2>
 <p>Arduino is an open-source microcontroller platform used to build electronics projects.</p>
+</div>
+
+<!-- COMPONENTS -->
+<div class="box">
+<h2>🔧 Hardware Components</h2>
+<ul>
+<li>Arduino Board (UNO)</li>
+<li>LED</li>
+<li>Resistor (220Ω)</li>
+<li>Breadboard</li>
+<li>Jumper Wires</li>
+<li>Push Button</li>
+</ul>
+</div>
+
+<!-- PROJECT 1 -->
+<div class="box">
+<h2>💡 Project 1: LED Blinking</h2>
+<p>This project makes an LED blink ON and OFF.</p>
+
+<h3>🧰 Components:</h3>
+<ul>
+<li>Arduino UNO</li>
+<li>LED</li>
+<li>220Ω Resistor</li>
+<li>Jumper wires</li>
+</ul>
+
+<h3>💻 Code:</h3>
+<pre>
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+</pre>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="box">
+<h2>🔘 Project 2: Button Control LED</h2>
+<p>Press button → LED ON, Release → LED OFF.</p>
+
+<h3>🧰 Components:</h3>
+<ul>
+<li>Arduino UNO</li>
+<li>LED</li>
+<li>Push Button</li>
+<li>Resistor</li>
+</ul>
+
+<h3>💻 Code:</h3>
+<pre>
+int button = 2;
+int led = 13;
+
+void setup() {
+  pinMode(button, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  if(digitalRead(button) == HIGH) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+}
+</pre>
 </div>
 
 </body>
