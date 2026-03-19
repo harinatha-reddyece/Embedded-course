@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Arduino Course</title>
+<title>Communication Protocols</title>
+
 <style>
-body { font-family: Arial; padding: 20px; background:#f4f4f4; }
-h1 { color:#0a3d62; }
-.box { background:white; padding:15px; margin:10px 0; border-radius:10px; }
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  color: #0a3d62;
+}
+
+.box {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
 </style>
+
 </head>
 
 <body>
 
-<h1>🔌 Arduino Basics</h1>
+<h1>📡 Communication Protocols</h1>
 
 <div class="box">
-<h2>📌 What is Arduino?</h2>
-<p>Arduino is an open-source microcontroller platform used to build electronics projects.</p>
-</div>
-
-<div class="box">
-<h2>📌 Arduino Board</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Arduino_Uno_-_R3.jpg/640px-Arduino_Uno_-_R3.jpg" width="300">
-</div>
-
-<div class="box">
-<h2>📌 Hardware Components</h2>
+<h2>🔹 UART (Universal Asynchronous Receiver Transmitter)</h2>
+<p>Used for serial communication between microcontroller and devices like computer.</p>
 <ul>
-<li>Microcontroller</li>
-<li>LED</li>
-<li>Resistor</li>
-<li>Sensors</li>
-<li>Breadboard</li>
+<li>Simple communication</li>
+<li>No clock signal required</li>
+<li>Example: Arduino to PC</li>
 </ul>
 </div>
 
 <div class="box">
-<h2>📌 Basic Program</h2>
-<pre style="background:#eee; padding:10px;">
+<h2>🔹 SPI (Serial Peripheral Interface)</h2>
+<p>High speed communication protocol.</p>
+<ul>
+<li>Uses 4 wires (MOSI, MISO, SCK, SS)</li>
+<li>Very fast data transfer</li>
+<li>Used in sensors, displays</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>🔹 I2C (Inter-Integrated Circuit)</h2>
+<p>Two-wire communication protocol.</p>
+<ul>
+<li>Uses SDA and SCL</li>
+<li>Multiple devices can connect</li>
+<li>Used in RTC, sensors</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>🔧 Hardware Components</h2>
+<ul>
+<li>Arduino Board</li>
+<li>Sensor Module (I2C/SPI)</li>
+<li>Connecting Wires</li>
+<li>LCD Display</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>💡 Mini Project</h2>
+<p><b>Temperature Display using I2C LCD</b></p>
+<ul>
+<li>Connect temperature sensor to Arduino</li>
+<li>Use I2C LCD to display values</li>
+<li>Program using Embedded C</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>💻 Sample Code</h2>
+<pre>
+#include <Wire.h>
+
 void setup() {
-  pinMode(13, OUTPUT);
+  Wire.begin();
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13, LOW);
+  Serial.println("Communication Working");
   delay(1000);
 }
 </pre>
-</div>
-
-<div class="box">
-<h2>📌 Simple Projects</h2>
-<ul>
-<li>Blink LED</li>
-<li>Temperature Sensor</li>
-<li>Smart Light</li>
-</ul>
 </div>
 
 </body>
